@@ -65,15 +65,18 @@ Frames are converted from RGB to HSV color space for more robust detection.
 
 ### Color Range Definition
 ```python
-color_ranges = {
-    'red': [
-        {'lower': np.array([0, 50, 50]), 'upper': np.array([10, 255, 255])},
-        {'lower': np.array([170, 50, 50]), 'upper': np.array([180, 255, 255])}
-    ],
-    'yellow': [
-        {'lower': np.array([20, 100, 100]), 'upper': np.array([30, 255, 255])}
-    ]
-}
+class ColorDetector:
+    def __init__(self):
+        self.color_ranges = {
+            'red': [
+                {'lower': np.array([0, 100, 100]), 'upper': np.array([10, 255, 255])},
+                {'lower': np.array([160, 100, 100]), 'upper': np.array([179, 255, 255])}
+            ],
+            'yellow': [
+                {'lower': np.array([20, 120, 120]), 'upper': np.array([35, 255, 255])}
+            ]
+        }
+
 ```
 
 ### Mask Creation and Noise Reduction
