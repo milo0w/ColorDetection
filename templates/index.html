@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Detection - RED & YELLOW</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">🎨 Color Detection System</h1>
+            <p class="subtitle">Real-time RED & YELLOW detection using OpenCV</p>
+        </header>
+
+        <div class="main-content">
+            <div class="video-container">
+                <div class="video-wrapper">
+                    <img id="video-stream" src="{{ url_for('video_feed') }}" alt="Video Stream">
+                    <div class="video-overlay">
+                        <div class="status-indicator" id="status-indicator">
+                            <span class="status-dot active"></span>
+                            <span class="status-text">Detection Active</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="controls-panel">
+                <div class="stats-section">
+                    <h3>📊 Detection Statistics</h3>
+                    <div class="stats-grid">
+                        <div class="stat-card red">
+                            <div class="stat-icon">🔴</div>
+                            <div class="stat-info">
+                                <span class="stat-label">Red Objects</span>
+                                <span class="stat-value" id="red-count">0</span>
+                            </div>
+                        </div>
+                        <div class="stat-card yellow">
+                            <div class="stat-icon">🟡</div>
+                            <div class="stat-info">
+                                <span class="stat-label">Yellow Objects</span>
+                                <span class="stat-value" id="yellow-count">0</span>
+                            </div>
+                        </div>
+                        <div class="stat-card total">
+                            <div class="stat-icon">📹</div>
+                            <div class="stat-info">
+                                <span class="stat-label">Total Frames</span>
+                                <span class="stat-value" id="total-frames">0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="control-section">
+                    <h3>🎮 Controls</h3>
+                    <button id="toggle-btn" class="control-btn primary">
+                        <span class="btn-icon">⏸️</span>
+                        <span class="btn-text">Pause Detection</span>
+                    </button>
+                    <button id="refresh-btn" class="control-btn secondary">
+                        <span class="btn-icon">🔄</span>
+                        <span class="btn-text">Refresh Stats</span>
+                    </button>
+                </div>
+
+                <div class="info-section">
+                    <h3>ℹ️ How it Works</h3>
+                    <div class="info-content">
+                        <div class="info-item">
+                            <span class="info-number">1</span>
+                            <p>Camera captures real-time video feed</p>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-number">2</span>
+                            <p>OpenCV converts frames to HSV color space</p>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-number">3</span>
+                            <p>Color masks detect RED and YELLOW objects</p>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-number">4</span>
+                            <p>Bounding boxes highlight detected objects</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
