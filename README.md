@@ -76,7 +76,7 @@ class ColorDetector:
                 {'lower': np.array([20, 120, 120]), 'upper': np.array([35, 255, 255])}
             ]
         }
-
+```
 ### Mask Creation and Noise Reduction
 Binary masks are created for each color range and morphological operations are applied to reduce noise.
 
