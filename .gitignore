@@ -175,14 +175,6 @@ cython_debug/
 ehthumbs.db
 Thumbs.db
 
-# Project specific
-*.png
-*.jpg
-*.jpeg
-*.gif
-*.mp4
-*.avi
-
 # Logs
 logs/
 *.log

@@ -77,8 +77,6 @@ class ColorDetector:
             ]
         }
 
-```
-
 ### Mask Creation and Noise Reduction
 Binary masks are created for each color range and morphological operations are applied to reduce noise.
 
@@ -145,4 +143,3 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## Support
 
 Check the troubleshooting section, open an issue on GitHub, or contact the maintainer.
->>>>>>> 7621cf5 (Initial commit)
